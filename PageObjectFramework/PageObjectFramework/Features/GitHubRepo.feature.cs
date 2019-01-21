@@ -18,21 +18,21 @@ namespace PageObjectFramework.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Google Search")]
-    public partial class GoogleSearchFeature
+    [NUnit.Framework.DescriptionAttribute("GitHub Repo")]
+    public partial class GitHubRepoFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "GoogleSearch.feature"
+#line 1 "GitHubRepo.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Google Search", "\tAs an internet user\r\n\tI want to be able to easily find information\r\n\tSo I can le" +
-                    "arn more about the world", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "GitHub Repo", "\tAs a software engineer\r\n\tI want to be able to publish this harness\r\n\tSo that oth" +
+                    "ers can see the work", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -71,22 +71,17 @@ namespace PageObjectFramework.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Text Search")]
-        [NUnit.Framework.TestCaseAttribute("crawling", null)]
-        [NUnit.Framework.TestCaseAttribute("walking", null)]
-        [NUnit.Framework.TestCaseAttribute("running", null)]
-        public virtual void TextSearch(string term, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("README File is accessible")]
+        public virtual void READMEFileIsAccessible()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Text Search", null, exampleTags);
-#line 7
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("README File is accessible", null, ((string[])(null)));
+#line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
+#line 7
+ testRunner.When("The user navigates to the github page for this repository", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 8
- testRunner.Given("The user visits google", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 9
- testRunner.When(string.Format("The user searches for {0}", term), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
- testRunner.Then(string.Format("They see at least one {0} in the results", term), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The user can see a description of this repo in the README file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
