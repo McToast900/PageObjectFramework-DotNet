@@ -16,8 +16,7 @@ namespace PageObjectFramework
         [AfterScenario]
         public void CleanUp()
         {
-            //_driver.Close();
-            _driver.Dispose();
+            _driver.Quit();
         }
     }
 }
