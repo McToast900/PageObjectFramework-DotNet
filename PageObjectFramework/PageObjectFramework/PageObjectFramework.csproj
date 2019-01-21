@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="BrowserCleanUp.cs" />
     <Compile Include="BrowserSetup.cs" />
+    <Compile Include="Elements\PageObject.cs" />
     <Compile Include="Elements\SearchElements.cs" />
     <Compile Include="Features\GitHubRepo.feature.cs">
       <AutoGen>True</AutoGen>
