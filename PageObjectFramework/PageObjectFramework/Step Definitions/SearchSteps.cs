@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using PageObjectFramework.Elements;
 using TechTalk.SpecFlow;
 
 namespace PageObjectFramework.Step_Definitions
@@ -9,10 +10,12 @@ namespace PageObjectFramework.Step_Definitions
     class SearchSteps
     {
         private IWebDriver _driver;
+        private SearchElements _searchElements;
 
         public SearchSteps(IWebDriver driver)
         {
             _driver = driver;
+            _searchElements = new SearchElements(_driver);
         }
 
         [Given(@"The user visits google")]
@@ -24,9 +27,8 @@ namespace PageObjectFramework.Step_Definitions
         [When(@"The user searches for (.*)")]
         public void WhenTheUserSearchesFor(string term)
         {
-            var searchBox = _driver.FindElement(By.CssSelector("input[title='Search']"));
-            searchBox.SendKeys(term);
-            searchBox.SendKeys(Keys.Return);
+            _searchElements.SearchBox.SendKeys(term);
+            _searchElements.SearchBox.SendKeys(Keys.Return);
         }
 
         [Then(@"They see at least one (.*) in the results")]

@@ -27,7 +27,7 @@ namespace PageObjectFramework
             options.AddArgument("--headless");
 
             var webDriver = new ChromeDriver(options);
-            webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
+            webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
             _objectContainer.RegisterInstanceAs<IWebDriver>(webDriver);
         }
     }
